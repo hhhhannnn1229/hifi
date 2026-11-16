@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Hi-Fi Match 音響設備搭配顧問：探索設備、比較規格，依預算與空間規劃音響系統。">
+  <meta name="theme-color" content="#f7f7f4">
+  <title>Hi-Fi Match — 音響設備搭配顧問</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Hi-Fi Match 首頁"><span class="brand-mark">H</span><span>HI-FI MATCH</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="開啟導覽" aria-expanded="false">☰</button>
+    <nav id="mainNav" aria-label="主要導覽">
+      <a href="#database">設備資料庫</a><a href="#compare">設備比較</a><a href="#match">搭配推薦</a><a href="#knowledge">音響知識</a>
+    </nav>
+    <a class="header-cta" href="#match">開始搭配 <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero section-shell" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">A PERSONAL HI-FI GUIDE / EST. 2026</p>
+        <h1>讓每一件器材，<br><em>找到合適的位置。</em></h1>
+        <p class="hero-lead">從空間、預算到聆聽偏好，建立一套真正適合自己的音響系統。用清楚的規格與搭配邏輯，讓選擇回到音樂本身。</p>
+        <div class="hero-actions"><a class="button button-dark" href="#match">規劃我的系統 <span>↗</span></a><a class="text-link" href="#database">探索設備資料庫　→</a></div>
+      </div>
+      <div class="hero-art" aria-label="極簡音響器材示意圖">
+        <div class="art-number">01 / LISTENING SYSTEM</div>
+        <div class="speaker-art"><div class="speaker-driver big"></div><div class="speaker-driver small"></div><span>H / 01</span></div>
+        <div class="art-caption"><span>FORM FOLLOWS SOUND</span><span>DESIGNED FOR LISTENING</span></div>
+      </div>
+      <div class="hero-bottom"><span>SELECT WITH CLARITY.</span><span>01 — 05</span></div>
+    </section>
+
+    <section class="intro-strip">
+      <div class="section-shell strip-grid"><span class="eyebrow">THE HI-FI MATCH METHOD</span><p>好的搭配不是把規格堆到最高，而是讓器材、空間與聆聽習慣彼此平衡。</p><span class="strip-index">01 / 04</span></div>
+    </section>
+
+    <section class="content-section section-shell" id="database">
+      <div class="section-heading"><div><p class="eyebrow">01 — EQUIPMENT LIBRARY</p><h2>設備資料庫<span class="heading-dot">.</span></h2></div><p>以品牌資料為基礎，整理設備特性與重要規格。未查證的數值不會被猜測填入。</p></div>
+      <div class="toolbar"><label class="search-box"><span>⌕</span><input id="productSearch" type="search" placeholder="搜尋品牌、型號或關鍵字…" aria-label="搜尋設備"></label><select id="categoryFilter" aria-label="設備分類"><option value="all">全部類別</option><option value="speaker">喇叭</option><option value="amplifier">擴大機</option><option value="turntable">黑膠唱盤</option><option value="dac">DAC</option><option value="cd-player">CD 播放器</option></select></div>
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+      <p class="data-note">資料原則：官方規格優先；價格依地區、通路與時間變動，未取得可靠報價時顯示「未提供」。</p>
+    </section>
+
+    <section class="compare-section" id="compare">
+      <div class="section-shell content-section">
+        <div class="section-heading"><div><p class="eyebrow">02 — SIDE BY SIDE</p><h2>設備比較<span class="heading-dot">.</span></h2></div><p>選擇兩項設備，快速檢視規格差異。空白代表目前沒有足夠資料，不代表數值為零。</p></div>
+        <div class="compare-controls"><label>設備 A<select id="compareA"></select></label><span class="versus">VS</span><label>設備 B<select id="compareB"></select></label></div>
+        <div class="comparison-table-wrap"><table class="comparison-table"><thead><tr><th>比較項目</th><th id="compareTitleA">設備 A</th><th id="compareTitleB">設備 B</th></tr></thead><tbody id="compareBody"></tbody></table></div>
+      </div>
+    </section>
+
+    <section class="content-section section-shell" id="match">
+      <div class="section-heading"><div><p class="eyebrow">03 — YOUR SYSTEM</p><h2>搭配推薦<span class="heading-dot">.</span></h2></div><p>輸入聆聽條件，取得三種配置方向。推薦會標示資料缺口，不會把估算價格包裝成實際報價。</p></div>
+      <div class="match-layout">
+        <form id="matchForm" class="match-form">
+          <div class="form-block"><span class="form-index">A / BUDGET</span><label for="budget">總預算（NT$）</label><input id="budget" type="number" min="0" step="1000" value="50000" required><div class="field-row"><label for="speakerBudget">喇叭分項預算</label><input id="speakerBudget" type="number" min="0" step="1000" placeholder="選填"></div><div class="field-row"><label for="ampBudget">擴大機分項預算</label><input id="ampBudget" type="number" min="0" step="1000" placeholder="選填"></div><div class="field-row"><label for="sourceBudget">訊源分項預算</label><input id="sourceBudget" type="number" min="0" step="1000" placeholder="選填"></div></div>
+          <div class="form-block"><span class="form-index">B / ROOM</span><label>房間尺寸（公尺）</label><div class="dimension-inputs"><input id="roomWidth" type="number" min="0.5" step="0.05" value="2.5" aria-label="房間寬度"><span>×</span><input id="roomDepth" type="number" min="0.5" step="0.05" value="3" aria-label="房間深度"></div><p class="helper">輸入可用聆聽空間的寬與深，系統將以面積作為初步參考。</p></div>
+          <div class="form-block"><span class="form-index">C / SOUND</span><label for="soundPreference">聲音偏好</label><select id="soundPreference"><option value="natural">自然、耐聽、音色平衡</option><option value="warm">溫暖、厚實、人聲飽滿</option><option value="detail">細節、解析與空氣感</option><option value="dynamic">動態、低頻量感</option></select></div>
+          <div class="form-block"><span class="form-index">D / SOURCE</span><label for="sourceType">主要訊源</label><select id="sourceType"><option value="vinyl">黑膠唱盤</option><option value="streaming">串流／電腦</option><option value="cd">CD 播放器</option><option value="mixed">多種訊源</option></select></div>
+          <button class="button button-dark full-button" type="submit">產生三套搭配建議 <span>↗</span></button>
+        </form>
+        <div class="recommendations" id="recommendations" aria-live="polite"><div class="empty-state"><span class="empty-symbol">＋</span><h3>先認識你的聆聽空間</h3><p>填入左側條件，系統將依資料庫設備、空間與預算產生三種搭配方向。</p></div></div>
+      </div>
+    </section>
+
+    <section class="knowledge-section" id="knowledge">
+      <div class="section-shell content-section">
+        <div class="section-heading"><div><p class="eyebrow">04 — HI-FI BASICS</p><h2>音響知識<span class="heading-dot">.</span></h2></div><p>讀懂規格的意義，也理解規格無法告訴你的事。</p></div>
+        <div class="knowledge-grid">
+          <article><span>01 / FREQUENCY</span><h3>頻率響應</h3><p>表示設備在不同頻率下的輸出範圍。標示時要同時看測量條件與容差，例如 ±3 dB；數字不能直接等同實際聽感。</p></article>
+          <article><span>02 / SENSITIVITY</span><h3>靈敏度</h3><p>常以 dB（2.83 V／1 m）表示。數值較高通常代表相同電壓下較容易達到較高聲壓，但阻抗會影響實際功率需求。</p></article>
+          <article><span>03 / IMPEDANCE</span><h3>阻抗</h3><p>以 Ω 表示，且會隨頻率變化。標稱阻抗不是全頻固定值；搭配擴大機時也應留意最低阻抗與廠商建議。</p></article>
+          <article><span>04 / AMPLIFIER</span><h3>擴大機功率</h3><p>以 W 表示，必須連同負載阻抗、失真率與測量頻段閱讀。不要只比較單一瓦數，也要考量聆聽距離與音量。</p></article>
+        </div>
+        <p class="knowledge-footnote">本網站提供入門選購參考，不取代原廠文件、實際試聽或專業安裝評估。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="section-shell footer-inner"><a class="brand" href="#home"><span class="brand-mark">H</span><span>HI-FI MATCH</span></a><p>LISTEN MORE. CHOOSE BETTER.</p><span>© 2026 HI-FI MATCH / EDUCATIONAL PROJECT</span></div></footer>
+  <script src="app.js"></script>
+</body>
+</html>
